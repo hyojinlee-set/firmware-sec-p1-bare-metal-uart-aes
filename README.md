@@ -18,12 +18,19 @@ Verification: Logic Analyzer, Serial Terminal
 
 ## Key Engineering Decisions
 ### HAL은 사용하지 않음.
+성능 및 보안 제어권 확보
 ### STM32F4를 사용하는 이유.
+Cortex-M4 표준 아키텍처
+ST-LINK 내장
 ### 대칭키(AES-128)를 사용하는 이유.
+하드웨어 제약 내에서 표준적이고 검증된 대칭키 암호화
 ### 인터럽트 우선순위 설계
-구현 중 실제 동작 기반으로 작성 예정 — 이론과 실제가 다를 수 있음
+구현 중 실제 동작 기반으로 작성 예정
 
 ## Threat Model
-구현하면서 취약 지점을 발견하는 순서대로 추가
+예상 공격벡터 
+UART 데이터 스니핑
+키 관리 취약점
+인터럽트 우선순위로 인한 DoS 가능성
 
 ## Troubleshooting & Learned
